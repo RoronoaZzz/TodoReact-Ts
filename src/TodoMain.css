@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  flex-direction: row;
+}
+
+.done {
+  background-color: green;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
