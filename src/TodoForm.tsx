@@ -21,7 +21,7 @@ export const TodoForm = () => {
       return
     } 
     
-
+    console.log(1);
 
     const array = new Uint32Array(1);
     const uniqueId = crypto.getRandomValues(array)[0];
@@ -40,22 +40,15 @@ export const TodoForm = () => {
 
   const onDelete = (id: number) => {
     setItem(prevItems => prevItems.filter(item => item.id !== id));
+    console.log(1);
   };
   
-  
-
-  const form: HTMLFormElement | null = document.querySelector('.myForm');
-
-  if (form) {
-    form.addEventListener('submit', function(event: Event) {
-      event.preventDefault();
-    });
-  }
+ 
   
 
   return (
     <div>
-    <form action="/submit_form" method="post" className="myForm">
+    <form action="/submit_form" method="post" className="myForm" onSubmit={(e) => e.preventDefault()}>
       <input type="text" placeholder="Создать дело" value={newItem} onChange={e => setNewItem(e.target.value)} />
       <button onClick={addItem}>Подтвердить</button>
     </form>

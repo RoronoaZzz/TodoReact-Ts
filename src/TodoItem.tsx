@@ -20,6 +20,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({ item, onDelete }) => {
 
   // Обработчик для выполнения/отмены выполнения задания
   const handleClickDone = () => {
+    console.log(1);
     setIsDone(prevState => {
       const newState = !prevState;
       if (newState) {
